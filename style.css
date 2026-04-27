@@ -1,0 +1,1071 @@
+/* ========================
+   VARIABLES AND BASE STYLES
+   ======================== */
+:root {
+    --primary-cyan: #00b4d8;
+    --dark-cyan: #2a9d8f;
+    --primary-teal: #1f4a41;
+    --accent-green: #62D461;
+    --light-green: rgba(98, 212, 97, 0.2);
+    --gold: #fcc115;
+    --white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-v2-light: #f1f5f9;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --text-muted-v2: #64748b;
+    
+    --font-heading: 'TT Hoves', 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-speakers: 'Anton', sans-serif;
+    
+    --shadow-premium: 0 10px 40px rgba(0, 0, 0, 0.06);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1);
+    
+    --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--white);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 800; 
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+h2 { font-size: 2.5rem; }
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 3rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 4rem; }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 2.2rem;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 1.05rem;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-cyan);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 180, 216, 0.4);
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.85); /* White with opacity */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    transition: var(--transition);
+}
+
+.header.scrolled .logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-cyan);
+}
+
+/* Animations - Reveal on Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 1. HERO SECTION (Page 1 Match) */
+.hero-v3 {
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.hero-img-full {
+    display: none; /* using background instead for strict 50/50 split */
+}
+
+.hero-split {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-left {
+    flex: 1;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5%;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-left::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -144px; /* Large sweep into the right */
+    width: 600px;
+    height: 120vh; /* Taller than viewport to ensure full sweep */
+    background: white;
+    border-radius: 50%; /* Fully round radius */
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.hero-brand-container {
+    width: 100%;
+    max-width: 800px; /* Increased size significantly */
+    margin-left: 5%;
+}
+
+.hero-brand-img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-right {
+    flex: 1;
+    background: url('assets/hero.png') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.hero-circle-overlay {
+    display: none; /* Managed by pseudo element on left */
+}
+
+
+/* 2. ABOUT EVENT (Page 2 Match) */
+.about-section-v3 {
+    height: 100vh;
+    min-height: 800px;
+    background: white;
+    margin-bottom: 2rem; 
+    margin-top: 0.07rem;
+}
+
+.about-split {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.about-left {
+    flex: 1;
+    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-logo-over-text {
+    width: 350px; /* Made larger */
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.about-content-inner p {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.about-right {
+    flex: 1;
+    height: 100%;
+    display: flex;
+}
+
+.about-img-v3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* REMOVED rounded corners */
+}
+
+/* 3 & 4. V2 MATCH SECTIONS (Pages 3 & 4) */
+.section-v2-match {
+    padding: 8rem 0;
+    overflow: hidden;
+}
+
+.bg-light-v2 {
+    background-color: var(--bg-v2-light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.cyan-accent {
+    background: linear-gradient(to right, var(--primary-cyan), #1f4a41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-transform: none;
+}
+
+.text-block-v2 p {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--text-main);
+}
+
+.visual-stack-v2 {
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the image and shapes */
+.image-section-container {
+    position: relative;
+    display: inline-block; /* Keeps the container tight around the image */
+}
+
+.shape-blob {
+    position: absolute;
+    border-radius: 24px;
+    /* Use a bright green to match the logo accents */
+    background-color: #56D07F; 
+    pointer-events: none; /* Prevents boxes from interfering with clicks */
+}
+
+/* Smallest background blob (Top Left of the cluster) */
+.shape-1 {
+    width: 80px;
+    height: 100px;
+    top: -160px; 
+    right: 290px;
+    opacity: 0.2;
+    z-index: -1; /* Sits behind everything */
+}
+
+/* Middle blob (Center of the cluster) */
+.shape-2 {
+    width: 130px;
+    height: 130px;
+    top: -180px;
+    right: 200px;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Large foreground blob (Right side) */
+.shape-3 {
+    width: 200px;
+    height: 140px;
+    top: -100px;
+    right: 70px; /* Slight overflow to the right */
+    opacity: 0.85;
+    z-index: -1;
+}
+
+/* Ensure your actual image has a higher z-index or 
+   is positioned relatively to sit on top of the shapes */
+.relative-img {
+    position: relative;
+    z-index: 2;
+    border-radius: 40px; /* Matching the rounded corners in your screenshot */
+    box-shadow: var(--shadow-xl);
+}
+
+.section-logo-large {
+    height: 160px; /* Made larger */
+    margin-bottom: 2rem;
+}
+
+
+/* 5. SPEAKERS SECTION (Page 5 Exact Match) */
+.speakers-section-v5 {
+    padding: 3rem 0;
+    background: #f8fafc;
+    overflow-x: hidden;
+}
+
+.speakers-row {
+    display: flex;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Break out of container */
+}
+
+.speaker-item-v5 {
+    flex: 1;
+    aspect-ratio: 1/1; /* Ensure squares */
+    overflow: hidden;
+    border-radius: 0; /* Strictly no rounded corners */
+    border: none; /* No border */
+    box-shadow: none;
+}
+
+.speaker-item-v5:hover {
+    transform: none; /* Disable transform to keep strip intact */
+}
+
+.speaker-img-v5 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.speaker-item-v5:hover .speaker-img-v5 {
+    transform: scale(1.05); /* Zoom inner image instead */
+}
+
+.speakers-middle-content {
+    text-align: center;
+    margin: 6rem 0;
+}
+
+.names-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.speaker-category-name {
+    font-family: var(--font-speakers); /* ANTON FOR SPEAKERS */
+    font-weight: 350; /* Anton doesn't need bold */
+    font-size: 2.5rem;
+    background: linear-gradient(to right, var(--primary-cyan), #1f4a41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin-bottom: 1rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+
+/* 6. DIRIGIDO SECTION (Page 6) */
+.dirigido-grid-v3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.dirigido-card-v2 {
+    background: #62D461; 
+    border-radius: 50px; /* Keep rounded for cards */
+    padding: 4rem 2rem; 
+    text-align: center; 
+    color: white;
+}
+
+/* 7. ENCONTRAR SECTION (Page 7 Exact Match) */
+.section-encontrar {
+    padding: 8rem 0;
+    background: white;
+}
+
+.encontrar-banner {
+    background: var(--primary-cyan);
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.encontrar-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* 7b. PARTICIPAR SECTION */
+.section-participar {
+    padding: 10rem 0;
+    background: white;
+}
+
+/* 7c. CARACTERÍSTICAS */
+.section-caracteristicas {
+    background: white;
+}
+
+/* 7d. HISTORIAS */
+.section-historias {
+    background: white;
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+}
+
+.info-grid-v7 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+
+.info-box-v7 {
+    background: #0d2e27; /* Dark emerald green */
+    padding: 3.5rem;
+    border-top: 10px solid #7cb9e8; /* Light blue top border */
+    border-radius: 0; /* NO rounded corners */
+    transition: var(--transition);
+}
+
+.info-box-v7:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.info-box-v7 h3 {
+    color: var(--gold); /* Gold highlights */
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+    font-weight: 800;
+}
+
+.info-box-v7 p {
+    color: white;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+
+/* 8. PARTICIPAR SECTION (Page 8) */
+.participar-grid-v8 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.reason-card-v8 {
+    background: white;
+    border: 2px solid #ef233c;
+    padding: 4rem 2rem 2rem;
+    border-radius: 2rem; /* Keep rounded corners for these specific cards */
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.hexagon-icon-v8 {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 80px;
+    background: #ef233c;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hexagon-icon-v8 img {
+    width: 35px;
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+.reason-card-v8 h3 {
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+.reason-card-v8 p {
+    font-size: 1rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+
+/* 9. CARACTERÍSTICAS SECTION (Page 9) */
+.traits-flex {
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+.traits-text {
+    flex: 1.2;
+}
+
+.traits-list-v3 {
+    list-style: none;
+}
+
+.traits-list-v3 li {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.traits-list-v3 li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: black;
+    font-weight: 800;
+}
+
+.traits-visual {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.trait-img {
+    width: 100%;
+    border-radius: 30px; /* Keep rounded corners for Bento Grid */
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.lightbulb-float-v3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #62D461;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(98, 212, 97, 0.4);
+    z-index: 15;
+}
+
+.bulb-white-center {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bulb-asset-colored {
+    width: 45px;
+    filter: invert(88%) sepia(61%) saturate(2758%) hue-rotate(358deg) brightness(107%) contrast(105%); /* Turns black icon into yellow */
+}
+
+
+/* 10. HISTORIAS SECTION (Page 10 Exact Match) */
+.historias-title {
+    background: linear-gradient(to right, var(--primary-cyan), #1f4a41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 4.5rem;
+    text-transform: none;
+}
+
+.historias-grid-v10 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.story-col-v10 img {
+    border-radius: 0; /* NO rounded corners */
+}
+
+.story-col-v10 h3 {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+}
+
+.story-col-v10 p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+
+/* 11. CONECTA SECTION (Page 11 Exact Match) */
+.conecta-section {
+    padding: 8rem 5rem; /* Added 2rem margin/padding from left and right */
+    background: white;
+}
+
+.conecta-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 5rem; /* Increased gap for better breathing room */
+    align-items: flex-start; /* Align to top to match design flow */
+}
+
+.conecta-title {
+    font-size: 5rem;
+    background: linear-gradient(to right, var(--primary-cyan), #1f4a41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    line-height: 0.9;
+}
+
+.conecta-subtitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-teal);
+    margin-bottom: 3rem;
+    text-transform: none;
+}
+
+.conecta-img-1 {
+    width: 100%;
+    border-radius: 0; /* NO rounded corners */
+    border-bottom: 8px solid; /* Added bottom border from design */
+    border-image-slice: 1;
+    border-width: 8px;
+    border-image-source: linear-gradient(to right, #90be6d, #00b4d8); /* Green to blue */
+}
+
+.conecta-img-2 img {
+    border-radius: 0; /* NO rounded corners */
+    width: 100%;
+    height: 550px; /* Increased height to match/balance with the 1st photo */
+    object-fit: cover; /* Maintain aspect ratio without stretching */
+}
+
+.conecta-text {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: #1a202c;
+    padding-top: 2rem; /* Spacing from top to match image alignment */
+}
+
+
+/* 12. CONTACTO SECTION (Page 12 Exact Match) */
+.contact-section-v12 {
+    display: flex;
+    width: 100%;
+    min-height: 700px;
+    background: white;
+    overflow: hidden;
+}
+
+.contact-visual-v12 {
+    flex: 1;
+    position: relative;
+    background: #f1f5f9;
+}
+
+.contact-img-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Strictly 0 border radius */
+}
+
+.site-name-overlay-v12 {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 3.8vw; /* Use vw to ensure it fits within the 50% split width */
+    max-width: 90%; /* Prevent it from touching the right edge of the split */
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.contact-info-v12 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background: white;
+}
+
+.contact-logo-v12 {
+    height: 80px;
+    margin-bottom: 3rem;
+}
+
+.contact-title-v12 {
+    font-size: 3.5rem;
+    color: var(--primary-teal);
+    line-height: 1.1;
+    margin-bottom: 4rem;
+    text-transform: none;
+    font-weight: 800;
+}
+
+.contact-list-v12 {
+    list-style: none;
+}
+
+.contact-item-v12 {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.icon-circle-v12 {
+    width: 50px;
+    height: 50px;
+    background: var(--white); /* Ensure clean background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+}
+
+.decorative-footer-bar {
+    height: 60px; /* Taller as per design */
+    background: #f1f5f9; 
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 20px,
+        rgba(0, 0, 0, 0.03) 20px,
+        rgba(0, 0, 0, 0.03) 40px
+    ); /* Subtle diagonal stripe pattern as seen in 12.png */
+    width: 100%;
+}
+
+/* ========================
+   MOBILE NAVIGATION
+   ======================== */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 2rem;
+}
+
+.mobile-nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary-cyan);
+}
+
+/* ========================
+   RESPONSIVE OVERHAUL
+   ======================== */
+
+/* Tablet & Smaller (Below 1024px) */
+@media (max-width: 1024px) {
+    h2 { font-size: 2.8rem; }
+    
+    .nav-links { display: none; }
+    .nav-actions .btn-primary { display: none; } /* Hide register button in header */
+    .mobile-menu-toggle { display: block; }
+    
+    /* Hero */
+    .hero-v3 { height: auto; min-height: auto; flex-direction: column; }
+    .hero-split { flex-direction: column; }
+    .hero-left { padding: 8rem 2rem 4rem; justify-content: center; text-align: center; }
+    
+    .shape-blob { display: none; } /* Remove green boxes in tablet and further modes */
+    
+    .hero-left::after { 
+        width: 120%; 
+        height: 300px; 
+        bottom: -150px; 
+        top: auto; 
+        right: -10%; 
+        left: -10%; 
+        transform: none;
+    }
+    .hero-brand-container { margin-left: 0; max-width: 90%; }
+    .hero-right { height: 400px; width: 100%; }
+
+    /* About Section */
+    .about-section-v3 { height: auto; padding-bottom: 4rem; }
+    .about-split { flex-direction: column; }
+    .about-left { padding: 4rem 2rem; text-align: center; }
+    .section-logo-over-text { margin: 0 auto 2rem; max-width: 280px; }
+    .about-right { height: 400px; width: 100%; }
+    
+    /* Grids */
+    .gallery-grid, .conecta-grid, .info-grid-v7, .participar-grid-v8, .historias-grid-v10, .dirigido-grid-v3 { 
+        grid-template-columns: 1fr !important; 
+        gap: 2rem; 
+        text-align: center; 
+    }
+
+    .traits-flex {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: left; /* Align text to the left as requested */
+    }
+    
+    .traits-text { order: 1; }
+    .traits-visual { order: 2; width: 100%; }
+    .conecta-title { font-size: 4rem; }
+    
+    .conecta-img-1, .conecta-img-2 img {
+        width: 80% !important;
+        max-width: 400px;
+        height: auto !important;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .conecta-img-wrap { text-align: center; }
+
+    .encontrar-title { font-size: 2.5rem; } /* Reduced by 1rem for tablet */
+    
+    /* Contact */
+    .contact-section-v12 { flex-direction: column; height: auto; }
+    .contact-visual-v12 { height: 400px; }
+    .site-name-overlay-v12 { font-size: 8vw; bottom: 20px; left: 20px; }
+    .contact-info-v12 { padding: 4rem 2rem; }
+    .contact-title-v12 { font-size: 2.5rem; text-align: center; }
+
+    /* Dirigido Section */
+    .dirigido-card-v2 { padding: 3rem 2rem; border-radius: 30px; }
+    .dirigido-card-v2 h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .dirigido-card-v2 img { width: 100%; height: auto; }
+
+    /* General Section Padding Reductions */
+    .section-encontrar, .section-participar, .section-historias {
+        padding: 4rem 0 !important;
+    }
+}
+
+/* Tablet Portrait (Below 768px) */
+@media (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    body { font-size: 0.95rem; }
+    
+    /* About Section */
+    .section-logo-over-text { display: none; }
+    .about-content-inner p { font-size: 1.1rem; }
+    
+    .conecta-text { font-size: 1.1rem; }
+    .conecta-subtitle { font-size: 1.8rem; }
+    
+    /* Dirigido Section */
+    .dirigido-card-v2 { padding: 3rem 1.5rem; border-radius: 30px; }
+    .dirigido-card-v2 h2 { margin-bottom: 2rem; }
+    
+    /* Speakers Grid Wrap */
+    .speakers-row { 
+        flex-wrap: wrap; 
+        width: 100%; 
+        margin-left: 0; 
+        justify-content: center;
+        gap: 1.5rem; /* Added gap for circular layout */
+        padding: 0 1rem;
+    }
+    .speaker-item-v5 { 
+        flex: 0 0 120px; /* Smaller fixed size */
+        height: 120px;
+        border-radius: 50%; /* Made them circles as requested */
+    } 
+    .names-grid { grid-template-columns: 1fr; }
+    .speaker-category-name { font-size: 2rem; }
+
+    /* Bento Grid */
+    .traits-visual { grid-template-columns: 1fr 1fr; }
+    
+    /* Info/Reason Cards */
+    .info-grid-v7, .participar-grid-v8, .historias-grid-v10 { 
+        grid-template-columns: 1fr !important; 
+        gap: 1.5rem; 
+    }
+    
+    .info-box-v7 { padding: 2rem; }
+    
+    .section-logo-large { height: 100px; }
+}
+
+/* Mobile (Below 480px) */
+@media (max-width: 480px) {
+    .container { padding: 0 1.5rem; }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    p { font-size: 0.9rem; }
+    
+    .hero-brand-container { max-width: 100%; }
+    
+    /* Keep circular speakers on mobile */
+    .speaker-item-v5 { flex: 0 0 100px; height: 100px; } 
+    
+    .info-box-v7 { padding: 2rem; }
+    .info-box-v7 h3 { font-size: 1.6rem; }
+    
+    .historias-title { font-size: 2.5rem; }
+    
+    .encontrar-title { font-size: 1.8rem; } /* Further reduction for small mobile */
+    
+    .contact-item-v12 { font-size: 1.1rem; gap: 1rem; }
+    .icon-circle-v12 { width: 40px; height: 40px; }
+    
+    .site-name-overlay-v12 { font-size: 10vw; }
+}
+
+/* Ultra Wide Support */
+@media (min-width: 2000px) {
+    .container { max-width: 1800px; }
+}

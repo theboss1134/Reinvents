@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reinventados Expo V3 – El Futuro Empresarial de Puerto Rico</title>
+    <meta name="description" content="El evento empresarial más importante de Puerto Rico para emprendedores y PyMEs.">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Reinventados Expo">
+                </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#que-encontrar">¿Qué Encontrar?</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="btn btn-primary">Registro</a>
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="menuToggle">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenu">
+                <i data-lucide="x"></i>
+            </button>
+            <ul class="mobile-nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#que-encontrar">¿Qué Encontrar?</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li class="mt-4"><a href="#" class="btn btn-primary">Registro</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION (Final Design Match) -->
+        <section id="inicio" class="hero-v3">
+            <!-- Full Background Hero Image -->
+            <img src="assets/hero.png" alt="Evento Reinventados" class="hero-img-full">
+            <div class="hero-split">
+                <div class="hero-left reveal active">
+                    <div class="hero-brand-container">
+                        <img src="assets/1.png" alt="Reinventados Expo" class="hero-brand-img">
+                    </div>
+                </div>
+                <!-- Explicit circle element for easy shifting -->
+                <div class="hero-circle-overlay"></div>
+                <div class="hero-right reveal active">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT EVENT (Match Page 2) -->
+        <section id="sobre" class="about-section-v3">
+            <div class="about-split">
+                <div class="about-left reveal active">
+                    <div class="about-content-inner">
+                        <img src="assets/1.png" alt="Logo" class="section-logo-over-text">
+                        <p class="mt-4 text-muted-v2">Es el evento más importante en Puerto Rico para emprendedores y pequeñas y medianas empresas y todas esas personas que se han reinventado o piensan reinventarse.</p>
+                        <p class="mt-4 text-muted-v2">Reúne en un mismo espacio a la iniciativa pública, privada y académica con el objetivo de impulsar proyectos, fomentar la vinculación y ofrecer soluciones que fortalezcan la competitividad empresarial de la Isla.</p>
+                    </div>
+                </div>
+                <div class="about-right reveal active">
+                    <img src="assets/3.png" alt="Empresaria" class="about-img-v3">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EMPRESARIO EXITOSO (Match Page 3) -->
+        <section class="section-v2-match bg-light-v2">
+            <div class="container gallery-grid">
+                <div class="reveal">
+                    <h2 class="cyan-accent">El empresario <span class="cyan-accent">exitoso...</span></h2>
+                    <div class="text-block-v2 mt-5">
+                        <p>Se define por su visión estratégica, resiliencia ante el fracaso, pasión, creatividad para innovar y una gran capacidad de liderazgo y toma de decisiones.</p>
+                        <p class="mt-4">Estas personas son disciplinadas, asumen riesgos calculados, priorizan al cliente y gestionan la parte financiera con rigor, buscando siempre el crecimiento continuo y soluciones efectivas.</p>
+                    </div>
+                </div>
+                <div class="reveal visual-stack-v2">
+                    <div class="image-section-container">
+                        <div class="shape-blob shape-1"></div>
+                        <div class="shape-blob shape-2"></div>
+                        <div class="shape-blob shape-3"></div>
+                        <img src="assets/couple.png" alt="Líderes" class="img-rounded-large relative-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CRECIMIENTO SECTION (Match Page 4) -->
+        <section class="section-v2-match">
+            <div class="container gallery-grid">
+                <div class="reveal">
+                    <img src="assets/1.png" alt="Logo" class="section-logo-large">
+                    <h2 class="cyan-accent">El encuentro empresarial para el crecimiento de tu negocio.</h2>
+                    <div class="text-block-v2 mt-4">
+                        <p class="text-block-v2 mt-5">Conecta con líderes de la industria, accede a conferencias con expertos y participa en el mejor networking de Puerto Rico. Esta es tu oportunidad.</p>
+                    </div>
+                </div>
+                <div class="reveal visual-stack-v2">
+                    <div class="image-section-container">
+                        <div class="shape-blob shape-1"></div>
+                        <div class="shape-blob shape-2"></div>
+                        <div class="shape-blob shape-3"></div>
+                        <img src="assets/couple.png" alt="Crecimiento" class="img-rounded-large relative-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SPEAKERS SECTION (Restructured V5) -->
+        <section id="speakers" class="speakers-section-v5">
+            <!-- Top Row: 6 Speakers -->
+            <div class="speakers-row top-row reveal">
+                <div class="speaker-item-v5"><img src="assets/35.png" alt="Speaker" class="speaker-img-v5" style="object-position: center 15%;"></div>
+                <div class="speaker-item-v5"><img src="assets/32.png" alt="Speaker" class="speaker-img-v5" style="object-position: center 15%;"></div>
+                <div class="speaker-item-v5"><img src="assets/36.png" alt="Speaker" class="speaker-img-v5" style="object-position: 80% center;"></div>
+                <div class="speaker-item-v5"><img src="assets/34.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/37.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/40.png" alt="Speaker" class="speaker-img-v5"></div>
+            </div>
+
+            <!-- Middle Content: Categories -->
+            <div class="speakers-middle-content reveal">
+                <div class="names-grid">
+                    <div class="names-col">
+                        <h3 class="speaker-category-name">Speakers de Finanzas</h3>
+                        <h3 class="speaker-category-name">Speakers de Permisos</h3>
+                        <h3 class="speaker-category-name">Speakers de Mercadeo</h3>
+                        <h3 class="speaker-category-name">Speakers de AI</h3>
+                    </div>
+                    <div class="names-col">
+                        <h3 class="speaker-category-name">Speakers Inversiones</h3>
+                        <h3 class="speaker-category-name">Speakers Redes Sociales</h3>
+                        <h3 class="speaker-category-name">Speakers Historias de Éxito</h3>
+                        <h3 class="speaker-category-name">Speakers Recursos Humanos</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row: 5 Speakers -->
+            <div class="speakers-row bottom-row reveal">
+                <div class="speaker-item-v5"><img src="assets/39.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/33.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/42.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/38.png" alt="Speaker" class="speaker-img-v5"></div>
+                <div class="speaker-item-v5"><img src="assets/41.png" alt="Speaker" class="speaker-img-v5"></div>
+            </div>
+           <section class="section-dirigido" style="margin-top: 1rem; background: white; padding: 6rem 0;">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <h2 style="color: var(--primary-cyan); font-size: 3.5rem; font-weight: 800; margin-bottom: 4rem;">¿A quién va dirigido?</h2>
+                </div>
+                <div class="dirigido-grid-v3 reveal mb-5">
+                    <!-- Card 1 -->
+                    <div class="dirigido-card-v2" style="background: #62D461; border-radius: 50px; padding: 4rem 2rem; text-align: center; color: white;">
+                        <h3 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 1.5rem;">Emprendedores</h3>
+                        <p style="font-size: 1.25rem; line-height: 1.4; color: white;">Personas con ideas innovadoras que buscan impulsar su negocio desde Puerto Rico.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="dirigido-card-v2" style="background: #62D461; border-radius: 50px; padding: 4rem 2rem; text-align: center; color: white;">
+                        <h3 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 1.5rem;">PyMEs de Todos los Sectores</h3>
+                        <p style="font-size: 1.25rem; line-height: 1.4; color: white;">Pequeñas y medianas empresas de cualquier industria o segmento.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="dirigido-card-v2" style="background: #62D461; border-radius: 50px; padding: 4rem 2rem; text-align: center; color: white;">
+                        <h3 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 1.5rem;">Público General</h3>
+                        <p style="font-size: 1.25rem; line-height: 1.4; color: white;">Personas interesadas en emprender, aprender y conectar con el ecosistema.</p>
+                    </div>
+                </div>
+                <!-- Image Below -->
+                <div class="reveal mt-5">
+                    <img src="assets/13.png" alt="Comunidad Empresarial" style="width: 100%; height: auto; object-fit: contain;">
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ENCONTRAR SECTION (Page 7 Match) -->
+        <section id="experiencia" class="section-encontrar">
+            <div class="container">
+                <div class="reveal encontrar-banner">
+                    <h2 class="encontrar-title">¿Qué encontrar en Reinventados?</h2>
+                </div>
+                <div class="info-grid-v7 reveal">
+                    <div class="info-box-v7">
+                        <h3>Espacios de Exposición</h3>
+                        <p>Presenta tus productos y servicios ante miles de asistentes, empresas compradoras e inversionistas.</p>
+                    </div>
+                    <div class="info-box-v7">
+                        <h3>Networking Estratégico</h3>
+                        <p>Speed Networking, citas de negocio y encuentros sectoriales para conectar con socios, clientes y aliados.</p>
+                    </div>
+                    <div class="info-box-v7">
+                        <h3>Formación Empresarial</h3>
+                        <p>Conferencias, talleres y paneles con expertos locales e internacionales sobre tendencias y herramientas de negocio.</p>
+                    </div>
+                    <div class="info-box-v7">
+                        <h3>Vinculación con Apoyos</h3>
+                        <p>Accede a programas gubernamentales, fondos de capital y recursos del ecosistema emprendedor de Puerto Rico.</p>
+                    </div>
+                    <div class="info-box-v7">
+                        <h3>Escenario para Mujeres Empresarias</h3>
+                        <p>Espacio dedicado a destacar, conectar y empoderar a las empresarias de la Isla.</p>
+                    </div>
+                    <div class="info-box-v7">
+                        <h3>Sectores Estratégicos</h3>
+                        <p>Manufactura, turismo, tecnología, salud, agricultura and más sectores clave para la economía boricua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PARTICIPAR SECTION (Page 8 EXACT MATCH) -->
+        <section class="section-participar">
+            <div class="container">
+                <div class="text-center mb-5 reveal">
+                    <h2 style="color: var(--primary-cyan); font-size: 3.5rem; font-weight: 760; margin-bottom: 6rem;">¿porque participar de Reinventados?</h2>
+                </div>
+                
+                <div class="participar-grid-v8 reveal">
+                    <div class="reason-card-v8">
+                        <div class="hexagon-icon-v8">
+                            <img src="assets/people.png" alt="Aprende">
+                        </div>
+                        <h3>Aprende sin costo</h3>
+                        <p>Impulsa tu crecimiento. Aprende con los expertos en nuestro programa de conferencias y paneles B2B, el corazón de la formación y crecimiento para emprendedores y PyMEs.</p>
+                    </div>
+                    <div class="reason-card-v8">
+                        <div class="hexagon-icon-v8">
+                            <img src="assets/network.png" alt="Networking">
+                        </div>
+                        <h3>Da a conocer tu empresa</h3>
+                        <p>Realiza networking con otras PyMEs en un espacio diseñado para el intercambio de experiencias y buenas prácticas. Enriquece tus conexiones en la industria.</p>
+                    </div>
+                    <div class="reason-card-v8">
+                        <div class="hexagon-icon-v8">
+                            <img src="assets/task-management.png" alt="Agenda">
+                        </div>
+                        <h3>Agenda citas de negocios</h3>
+                        <p>Programa citas de negocio. Nuestra plataforma de vinculación comercial te conecta con grandes empresas y compradores que buscan activamente proveedores PyME.</p>
+                    </div>
+                    <div class="reason-card-v8">
+                        <div class="hexagon-icon-v8">
+                            <img src="assets/customer.png" alt="Financiera">
+                        </div>
+                        <h3>Orientación financiera</h3>
+                        <p>Acércate a bancos y entidades financieras para recibir orientación, asesoría y diagnósticos sobre créditos PyME y otros productos financieros diseñados para ti.</p>
+                    </div>
+                </div>
+
+                <!-- Quote Style Mission -->
+                <div class="text-left reveal" style="margin-top: 8rem;">
+                    <h2 style="color: var(--primary-cyan); font-size: 2.6rem; font-weight: 600; line-height: 1.1; max-width: 900px;">Creamos un espacio donde los puertorriqueños logran su autosuficiencia económica y revolucionan su forma de ver y hacer las cosas.</h2>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 9. CARACTERÍSTICAS SECTION (Page 9 Match) -->
+        <section id="caracteristicas" class="section-v2-match section-caracteristicas">
+            <div class="container traits-flex reveal">
+                <!-- Left: Text Content -->
+                <div class="traits-text">
+                    <h2 style="color: var(--primary-cyan); font-size: 3.5rem; margin-bottom: 2rem;">Características clave de un empresario exitoso:</h2>
+                    <ul class="traits-list-v3">
+                        <li><strong>Resiliencia:</strong> Capacidad para superar obstáculos y aprender de los errores, viendo el fracaso como una oportunidad, señala IEBS.</li>
+                        <li><strong>Visión y Liderazgo:</strong> Capacidad de anticipar tendencias, establecer objetivos claros y motivar a su equipo, destacan Next Educación y emprendedor.com.</li>
+                        <li><strong>Pasión y Disciplina:</strong> Motor interno que impulsa el trabajo duro constante y la dedicación necesaria, menciona Indeed.</li>
+                        <li><strong>Innovación:</strong> Creatividad para encontrar nuevas formas de hacer las cosas y resolver problemas, según IEBS.</li>
+                        <li><strong>Gestión Financiera:</strong> Conocimiento profundo de los números de su negocio para asegurar la sostenibilidad, destaca gbsgroup.net.</li>
+                        <li><strong>Orientación al Cliente:</strong> Enfoque en solucionar las necesidades del cliente, menciona IEBS.</li>
+                        <li><strong>Asunción de Riesgos:</strong> Disposición a arriesgarse y experimentar, según Indeed.</li>
+                        <li><strong>Networking:</strong> Capacidad para conectar con personas y crear alianzas estratégicas, menciona Next Educación.</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-weight: 700; font-size: 1.1rem; color: black;">Además, estos empresarios suelen mantener la curiosidad y humildad para seguir aprendiendo, informa Indeed México.</p>
+                </div>
+
+                <!-- Right: Visual Grid -->
+                <div class="traits-visual">
+                    <img src="assets/19.png" alt="Empresario" class="trait-img">
+                    <img src="assets/20.png" alt="Empresario" class="trait-img">
+                    <img src="assets/21.png" alt="Empresario" class="trait-img">
+                    <img src="assets/22.png" alt="Empresario" class="trait-img">
+                    
+                    <div class="lightbulb-float-v3">
+                        <div class="bulb-white-center">
+                            <img src="assets/bulb.png" alt="Idea" class="bulb-asset-colored">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. HISTORIAS SECTION (IMAGE 10 EXACT MATCH) -->
+        <section class="section-historias">
+            <div class="container">
+                <div class="mb-5 reveal">
+                    <h2 class="historias-title">Historias de Reinventados</h2>
+                </div>
+                <div class="historias-grid-v10 reveal">
+                    <div class="story-col-v10">
+                        <img src="assets/25.png" alt="Emprender" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 2rem;">
+                        <h3>Emprender</h3>
+                        <p>Emprender es una aventura llena de desafíos y aprendizajes, pero también es una de las experiencias más gratificantes para quienes buscan alcanzar la libertad profesional y financiera. Las ideas de negocios son el primer paso en este camino, y, a menudo, el reto más grande es encontrar inspiración en momentos de duda.</p>
+                        <p>Por eso, conocer casos de éxito puede marcar la diferencia, ya que nos muestra que, con pasión y esfuerzo, es posible convertir una idea en una realidad próspera.</p>
+                    </div>
+                    <div class="story-col-v10">
+                        <img src="assets/23.png" alt="Casos de Exito" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 2rem;">
+                        <h3>Casos de Exito</h3>
+                        <p>Relatos inspiradores de personas que, a través de la perseverancia y la resiliencia, lograron transformar sus vidas en momentos de desafío.</p>
+                        <p>Cada historia ofrece una visión única de cómo enfrentar la adversidad, superarse a uno mismo y descubrir la fuerza interior para reinventarse.</p>
+                    </div>
+                    <div class="story-col-v10">
+                        <img src="assets/24.png" alt="Networking" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 2rem;">
+                        <h3>Networking</h3>
+                        <p>Momentos para construir y mantener una red de contactos profesionales y personales que pueden proporcionarte apoyo, consejos, información y oportunidades en tu vida laboral and personal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10b. CONECTA SECTION (Page 11 Match) -->
+        <section id="conecta" class="conecta-section">
+            <div class="conecta-container-full">
+                <div class="conecta-grid">
+                    <!-- Left: Title + Image 1 -->
+                    <div class="conecta-left-col reveal">
+                        <div class="conecta-title-box">
+                            <h2 class="conecta-title">CONECTA.</h2>
+                            <p class="conecta-subtitle">Aprende y Crece</p>
+                        </div>
+                        <div class="conecta-img-wrap">
+                            <img src="assets/26.png" alt="Idea" class="conecta-img-1">
+                        </div>
+                    </div>
+                    
+                    <!-- Middle: Image 2 -->
+                    <div class="conecta-img-wrap conecta-img-2 reveal">
+                        <img src="assets/27.png" alt="Crecimiento" style="width: 100%;">
+                    </div>
+
+                    <!-- Right: Logo + Text -->
+                    <div class="conecta-right-col reveal">
+                        <p class="conecta-text">Reinventarse es transformarse profundamente a uno mismo, cambiando aspectos fundamentales de la propia identidad, propósito, forma de pensar o modo de vida. Implica no solo mejorar lo que ya eres, sino construir una nueva versión de ti mismo, a menudo en respuesta a un cambio de circunstancias, una crisis, el paso del tiempo o una decisión consciente de crecer.</p>
+              </div>
+        </section>
+
+        <!-- 11. CONTACTO SECTION (Page 12 EXACT MATCH) -->
+        <section id="contacto" class="contact-section-v12">
+            <!-- Left Side: Visual -->
+            <div class="contact-visual-v12 reveal">
+                <img src="assets/28-29.png" alt="Founder" class="contact-img-main">
+                <div class="site-name-overlay-v12">Reinventados.com</div>
+            </div>
+
+            <!-- Right Side: Info -->
+            <div class="contact-info-v12 reveal">
+                <div class="contact-content-v12">
+                    <img src="assets/logo.png" alt="Grupo Meyta" class="contact-logo-v12">
+                    <h2 class="contact-title-v12">Ismael Hernández / <br>Joel Rivera</h2>
+                    
+                    <ul class="contact-list-v12">
+                        <li class="contact-item-v12">
+                            <div class="icon-circle-v12"><i data-lucide="phone"></i></div>
+                            <span>787-590-7539</span>
+                        </li>
+                        <li class="contact-item-v12">
+                            <div class="icon-circle-v12"><i data-lucide="mail"></i></div>
+                            <span>meytapr@gmail.com</span>
+                        </li>
+                        <li class="contact-item-v12">
+                            <div class="icon-circle-v12"><i data-lucide="globe"></i></div>
+                            <span>meytapr.com</span>
+                        </li>
+                        <li class="contact-item-v12">
+                            <div class="icon-circle-v12"><i data-lucide="map-pin"></i></div>
+                            <span>Caguas, Puerto Rico</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Decorative Footer Bar (Match Page 12) -->
+        <div class="decorative-footer-bar"></div>
+    </main>
+
+    <!-- 12. FOOTER 
+    <footer class="footer-v3">
+        <div class="container">
+            <div class="footer-main-layout" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; padding-bottom: 4rem; text-align: left; align-items: start;">
+                
+                <div class="footer-brand-side">
+                    <img src="assets/logo.png" alt="Reinventados Expo" class="logo-footer" style="height: 60px; filter: grayscale(1); opacity: 0.6; margin-bottom: 2rem;">
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">Empoderando a los emprendedores de Puerto Rico a través de la formación, la vinculación y el networking estratégico.</p>
+                </div>
+
+                <div class="footer-links-side">
+                    <h4 style="font-size: 1.25rem; color: var(--primary-teal); margin-bottom: 1.5rem; font-weight: 800;">Navegación</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="#inicio" style="text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s ease;">Inicio</a></li>
+                        <li><a href="#sobre" style="text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s ease;">Nosotros</a></li>
+                        <li><a href="#speakers" style="text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s ease;">Speakers</a></li>
+                        <li><a href="#experiencia" style="text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s ease;">¿Qué Encontrar?</a></li>
+                        <li><a href="#contacto" style="text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s ease;">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row" style="display: flex; flex-direction: column; align-items: center; gap: 2.5rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 3rem;">
+                <div class="footer-socials-centered" style="display: flex; gap: 2rem;">
+                    <a href="#" style="color: var(--primary-cyan); transition: transform 0.3s ease;"><i data-lucide="facebook"></i></a>
+                    <a href="#" style="color: var(--primary-cyan); transition: transform 0.3s ease;"><i data-lucide="instagram"></i></a>
+                    <a href="#" style="color: var(--primary-cyan); transition: transform 0.3s ease;"><i data-lucide="linkedin"></i></a>
+                </div>
+                <div style="text-align: center; color: var(--text-muted); font-size: 0.95rem;">
+                    <p>&copy; 2024 Reinventados Expo & Grupo Meyta. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    -->
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
