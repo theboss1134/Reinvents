@@ -8,7 +8,8 @@ Use these keywords to quickly jump to specific sections in `index.html` and `sty
 | **Global Styles** | `:root` | Colors, fonts, and global variables |
 | **Header / Nav** | `.header` | Navigation bar and logo styles |
 | **Hero (Top)** | `hero-v3` | The main split-screen entry section |
-| **About Event** | `about-section-v3` | "Es el evento más importante..." section |
+| **About Event** | `sobre-evento` | "Es el evento más importante..." section |
+| **Nosotros** | `nosotros-section` | SOBRE GRUPO MEYTA founder bios |
 | **Success Block** | `section-v2-match` | Multi-use sections for "El empresario exitoso" |
 | **Speakers** | `speakers-section-v5` | The full-width speaker grid and categories |
 | **Target Audience** | `section-dirigido` | "¿A quién va dirigido?" green cards |

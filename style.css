@@ -220,6 +220,10 @@ img {
     height: auto;
 }
 
+.hero-mobile-img {
+    display: none;
+}
+
 .hero-right {
     flex: 1;
     background: url('assets/hero.png') no-repeat center center;
@@ -379,6 +383,96 @@ img {
 }
 
 
+/* NEW NOSOTROS SECTION: SOBRE GRUPO MEYTA */
+.nosotros-section {
+    padding: 10rem 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.nosotros-main-title {
+    font-size: 4rem;
+    color: var(--primary-cyan);
+    margin-bottom: 4rem;
+    letter-spacing: -0.03em;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    margin-bottom: 8rem;
+}
+
+.founder-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.founder-img-wrap {
+    width: 100%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.founder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.founder-card:hover .founder-img {
+    transform: scale(1.03);
+}
+
+.founder-name {
+    font-size: 2.5rem;
+    color: var(--primary-teal);
+    margin-bottom: 0.5rem;
+}
+
+.founder-role {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+}
+
+.founder-bio p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.nosotros-bottom-content {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 8rem;
+}
+
+.nosotros-accent-title {
+    font-size: 3.5rem;
+    color: var(--primary-cyan);
+    margin-bottom: 4rem;
+    max-width: 800px;
+}
+
+.nosotros-text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.nosotros-text-columns p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
 /* 5. SPEAKERS SECTION (Page 5 Exact Match) */
 .speakers-section-v5 {
     padding: 3rem 0;
@@ -482,6 +576,27 @@ img {
 .section-participar {
     padding: 10rem 0;
     background: white;
+}
+
+.participar-title {
+    color: var(--primary-cyan);
+    font-size: 3.5rem;
+    font-weight: 760;
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.mission-quote-container {
+    margin-top: 8rem;
+    text-align: left;
+}
+
+.mission-quote {
+    color: var(--primary-cyan);
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.1;
+    max-width: 900px;
 }
 
 /* 7c. CARACTERÍSTICAS */
@@ -591,6 +706,12 @@ img {
 
 .traits-text {
     flex: 1.2;
+}
+
+.traits-title {
+    color: var(--primary-cyan);
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
 }
 
 .traits-list-v3 {
@@ -925,16 +1046,27 @@ img {
     .shape-blob { display: none; } /* Remove green boxes in tablet and further modes */
     
     .hero-left::after { 
-        width: 120%; 
-        height: 300px; 
-        bottom: -150px; 
-        top: auto; 
-        right: -10%; 
-        left: -10%; 
-        transform: none;
+        display: none;
     }
     .hero-brand-container { margin-left: 0; max-width: 90%; }
-    .hero-right { height: 400px; width: 100%; }
+    
+    .hero-right { 
+        display: block; 
+        width: 100%;
+        height: 400px;
+        order: 2;
+    }
+    
+    .hero-left { order: 1; padding-bottom: 2rem; }
+
+    .hero-mobile-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: none;
+    }
 
     /* About Section */
     .about-section-v3 { height: auto; padding-bottom: 4rem; }
@@ -956,17 +1088,45 @@ img {
         text-align: left; /* Align text to the left as requested */
     }
     
+    .participar-title {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .mission-quote-container {
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    .mission-quote {
+        font-size: 1.8rem;
+        margin: 0 auto;
+    }
+
     .traits-text { order: 1; }
     .traits-visual { order: 2; width: 100%; }
+
+    .traits-title {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .traits-list-v3 li {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
     .conecta-title { font-size: 4rem; }
     
     .conecta-img-1, .conecta-img-2 img {
-        width: 80% !important;
-        max-width: 400px;
+        width: 100% !important;
+        max-width: 500px;
         height: auto !important;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
         display: block;
     }
+
+    .conecta-subtitle { margin-bottom: 2rem; }
+    .conecta-text { padding-top: 0; }
     
     .conecta-img-wrap { text-align: center; }
 
@@ -984,9 +1144,22 @@ img {
     .dirigido-card-v2 h2 { font-size: 2.5rem; margin-bottom: 2rem; }
     .dirigido-card-v2 img { width: 100%; height: auto; }
 
+    /* Nosotros Section */
+    .nosotros-section { padding: 6rem 0; }
+    .nosotros-main-title { font-size: 3rem; margin-bottom: 3rem; text-align: center; }
+    .founder-grid { grid-template-columns: 1fr; gap: 4rem; margin-bottom: 6rem; }
+    .founder-card { text-align: center; }
+    .founder-img-wrap { width: 80%; max-width: 350px; margin: 0 auto; }
+    .founder-name { font-size: 2rem; }
+    .nosotros-accent-title { font-size: 2.2rem; text-align: center; margin: 0 auto 3rem; }
+    .nosotros-text-columns { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+
+    .historias-title { font-size: 3rem; text-align: center; display: block; }
+
     /* General Section Padding Reductions */
-    .section-encontrar, .section-participar, .section-historias {
-        padding: 4rem 0 !important;
+    .section-encontrar, .section-participar, .section-historias, .conecta-section, .section-caracteristicas {
+        padding: 6rem 2rem !important;
+        text-align: center;
     }
 }
 
@@ -1048,6 +1221,15 @@ img {
     p { font-size: 0.9rem; }
     
     .hero-brand-container { max-width: 100%; }
+    
+    .traits-title { font-size: 1.8rem; }
+    .traits-list-v3 li { font-size: 1rem; }
+    
+    .participar-title { font-size: 1.8rem; margin-bottom: 2rem; }
+    
+    .mission-quote { font-size: 1.4rem; }
+    
+    .founder-img-wrap { max-width: 280px; }
     
     /* Keep circular speakers on mobile */
     .speaker-item-v5 { flex: 0 0 100px; height: 100px; } 
